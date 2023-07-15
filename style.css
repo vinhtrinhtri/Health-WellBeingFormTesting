@@ -51,7 +51,7 @@ form{
 }
 .form-section{
     display: grid;
-    grid-template-columns: 1fr 0.2fr ;
+    grid-template-columns: 1fr 0.8fr ;
     width: 90%;
     height:30%;
     max-width: 1200px;
