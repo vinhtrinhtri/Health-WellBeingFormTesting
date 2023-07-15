@@ -4,9 +4,12 @@
     box-sizing: border-box;
     font-family: "Century Gothic", Arial, sans-serif;
 }
-/*form{
+form{
     border: 1px solid black;
-}*/
+    width:90%;
+    max-width: 1200px;
+    margin: auto;
+}
 .title{
     display: grid;
     grid-template-columns: .2fr .5fr .3fr;
