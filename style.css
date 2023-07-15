@@ -67,3 +67,11 @@ button{
     position: relative;
     left: 80%;
 }
+.form-input{
+    display: grid;
+    grid-template-columns: 1fr 0.2fr;
+    width: 90%;
+    height: 30%;
+    max-width: 1200px;
+    align-items: center;
+}
