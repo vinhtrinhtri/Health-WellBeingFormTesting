@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset=UTF-8>
+        <meta name=viewport content="width=device-width initial-scale=1.0">
+        <meta http-equiv=X-UA-Compatible content="ie=edge">
+        <title>Health & Well Being Declaration</title>
+        <link rel=icon href="icon/ofi - primary logo RGB.png">
+        <link rel=stylesheet href=styleNew.css>
+        <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css integrity=sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm crossorigin=anonymous>
+        <script src=https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js integrity=sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl crossorigin=anonymous></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>    
+        <script>
+            $(function(){
+                $("#button").click(function(){
+                    var formData ={Date:$("#date").val(),name:$("#name").val(),visitor:$("#visitor").val(),purpose:$("#purpose").val()}
+                    $.ajax({
+                        contentType:"application/json",
+                        type: "POST",
+                            url:"https://prod-118.westeurope.logic.azure.com:443/workflows/0f368662a9d04c07a1164d31844f4c12/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=zvfQfo9cTvveL8lwApVn5myc4VGB1GZPyQXfptam1FA",
+                            data:JSON.stringify(formData),
+                        success: function(){
+                            $("#postResult").val("Success");
+                        },
+                        error:function(){
+                            $("#postResult").val("Failed");
+                        }
+                    })
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <section class=title>
+            <div class="title-section logo">
+                <img src="icon/ofi - primary logo RGB.png" alt id=logo>
+                <p>Cafe Outspan Vietnam Ltd</p>
+            </div>
+            <div class="title-section name">
+                <p>HEALTH & WELLBEING OF VISITOR AND CONTRACTOR</p>
+            </div>
+            <div class="title-section haccp">
+                <p>No: COV/SSOP-07-HR/FM0</p>
+                <p>Issue date: 02-May-22</p>
+                <p>Revision: 6</p>
+                <p>Page: 1/1</p>
+            </div>
+        </section>
+        <form method="post" id="form">
+            <div class="form-section">
+                <label for="date">Date</label>
+                <input required type="text" name="date" id="date">
+            </div>
+            <div class="form-section">
+                <label for="name">Name of the visitor/ contractor</label>
+                <input required type="text" name="name" id="name">
+            </div>
+            <div class="form-section">
+                <label for="visitor">Visitor/ contractor company</label>
+                <input required type="text" name="visitor" id="visitor">
+            </div>
+            <div class="form-section">
+                <label for="purpose">Purpose of the visit</label>
+                <input required type="text" name="purpose" id="purpose">
+            </div>
+            <!--<div class="form-section">
+                <label for="q1">During the last 24 hours, have you suffered from diarrhea, vomitting, stomach disorder or typhoid fever/ paratyphoid fever ?</label>
+                <input type="radio" name="q1" id="q1" value="Yes">
+                <label for=""></label>
+            </div>
+            <div class="form-section"></div>
+            <div class="form-section"></div>
+            <div class="form-section"></div>
+            <div class="form-section"></div>
+            <div class="form-section"></div>
+            <div class="form-section"></div>-->
+            <button id="button">Submit</button>
+            <input type="text" name="postResult" id="postResult" value="Empty">
+        </form>  
+    </body>
+</html>
