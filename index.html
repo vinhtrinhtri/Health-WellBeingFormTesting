@@ -9,8 +9,27 @@
 <link rel=stylesheet href=style.css>
 <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css integrity=sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm crossorigin=anonymous>
 <script src=https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js integrity=sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl crossorigin=anonymous></script>
-<script src=https://code.jquery.com/jquery-3.7.0.js integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin=anonymous></script>
-<script>function SubForm(){$.ajax({url:"https://api.apispreadsheets.com/data/rPapaVfrLFQN1IUE/",type:"post",data:$("#form").serializeArray(),success:function(){alert("Form Data Submitted :)")},error:function(){alert("There was an error :(")}})};</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $("#button").click(function(){
+                    var formData ={Date:$("#date").val(),name:$("#name").val(),visitor:$("#visitor").val(),purpose:$("#purpose"),q1:$("#q1").val(),q2:$("#q2").val(),q3:$("#q3").val(),q4:$("#q4").val(),q5:$("#q5").val(),q6:$("#q6").val(),q7:$("#q7").val()}
+                    $.ajax({
+                        contentType:"application/json",
+                        type: "POST",
+                            url:"https://prod-118.westeurope.logic.azure.com:443/workflows/0f368662a9d04c07a1164d31844f4c12/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=zvfQfo9cTvveL8lwApVn5myc4VGB1GZPyQXfptam1FA",
+                            data:JSON.stringify(formData),
+                        success: function(){
+                            $("#postResult").val("Success");
+                        },
+                        error:function(){
+                            $("#postResult").val("Failed");
+                        }
+                    })
+                })
+            })
+        </script>
+
 </head>
 <body>
 <section class=title>
@@ -29,6 +48,10 @@
 </div>
 </section>
 <form method=post id=form>
+<div class=form-section>
+<label for=date>Date</label>
+<input required type="text " id=date name=date placeholder="Date">
+</div>
 <div class=form-section>
 <label for=name>Name of the visitor/ contractor</label>
 <input required type=text id=name name=name placeholder="Enter Your's Name">
@@ -132,7 +155,8 @@
 <label class=form-check-label for=q7>No</label>
 </div>
 </div>
-<button onclick=SubForm() class="btn btn-success" style=background-color:#f78c2a;border-color:#f78c2a;margin-bottom:20px>Submit</button>
+<button id=button class="btn btn-success" style=background-color:#f78c2a;border-color:#f78c2a;margin-bottom:20px>Submit</button>
+<input type=text id=postResult value=Empty>
 </form>
 </body>
 </html>
