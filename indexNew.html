@@ -7,17 +7,15 @@
         <title>Health & Well Being Declaration</title>
         <link rel=icon href="icon/ofi - primary logo RGB.png">
         <link rel=stylesheet href=styleNew.css>
-        <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css integrity=sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm crossorigin=anonymous>
-        <script src=https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js integrity=sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl crossorigin=anonymous></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>    
         <script>
             $(function(){
                 $("#button").click(function(){
-                    var formData ={Date:$("#date").val(),name:$("#name").val(),visitor:$("#visitor").val(),purpose:$("#purpose").val()}
+                    var formData ={Date:$("#Date").val(),name:$("#name").val(),visitor:$("#visitor").val(),purpose:$("#purpose").val()}
                     $.ajax({
                         contentType:"application/json",
                         type: "POST",
-                            url:"https://prod-118.westeurope.logic.azure.com:443/workflows/0f368662a9d04c07a1164d31844f4c12/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=zvfQfo9cTvveL8lwApVn5myc4VGB1GZPyQXfptam1FA",
+                            url:"https://prod-53.westeurope.logic.azure.com:443/workflows/b76c819cd1624cddb4f8b5491d9bfb38/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=3a4EOeNvG3yRX6oPuToCcJQMgjGaesKLclUifddyf3U",
                             data:JSON.stringify(formData),
                         success: function(){
                             $("#postResult").val("Success");
@@ -30,7 +28,7 @@
             })
         </script>
     </head>
-    <body>
+    <body><!--
         <section class=title>
             <div class="title-section logo">
                 <img src="icon/ofi - primary logo RGB.png" alt id=logo>
@@ -45,11 +43,11 @@
                 <p>Revision: 6</p>
                 <p>Page: 1/1</p>
             </div>
-        </section>
+        </section>-->
         <form method="post" id="form">
             <div class="form-section">
-                <label for="date">Date</label>
-                <input required type="text" name="date" id="date">
+                <label for="Date">Date</label>
+                <input required type="text" name="Date" id="Date">
             </div>
             <div class="form-section">
                 <label for="name">Name of the visitor/ contractor</label>
