@@ -17,10 +17,10 @@
                             url:"https://prod-121.westeurope.logic.azure.com:443/workflows/ec68ccb45a0241e38ca063cef0751376/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=svq57-2nINHcpGcWJURvtXkVQp1R98NUTvjJ3eQxk0U",
                             data:JSON.stringify(formData),
                         success: function(){
-                            alert("Submitted");
+                            alert("(´▽`ʃ♡ƪ) Submitted (´▽`ʃ♡ƪ)");
                         },
                         error:function(){
-                            alert("Error!!!");
+                            alert("〒▽〒 Error!!! 〒▽〒");
                         }
                     })
                 })
@@ -29,7 +29,7 @@
         <link rel="stylesheet" href="styleNew.css">
     </head>
     <body>
-        <!--<section class=title>
+        <section class=title>
             <div class="title-section logo">
                 <img src="icon/ofi - primary logo RGB.png" id=logo>
                 <p>Cafe Outspan Vietnam Ltd</p>
@@ -43,13 +43,19 @@
                 <p>Revision: 6</p>
                 <p>Page: 1/1</p>
             </div>
-        </section>-->
-            <label for="name">Name</label>
-            <input required type="text" name="name" id="name" placeholder="Your's Name" >
-            <label for="visitor-company">Visitor</label>
-            <input required type="text" name="visitor-company" id="visitor-company" placeholder="Your's Company" >
-            <label for="visit-purpose">Purpose of Visiting</label>
-            <input required type="text" name="visit-purpose" id="visit-purpose" placeholder="Your's purpose" >
+        </section>
+            <div class="question">
+                <label for="name">Name</label>
+                <input required type="text" name="name" id="name" placeholder="Your's Name" >
+            </div>
+            <div class="question">
+                <label for="visitor-company">Visitor</label>
+                <input required type="text" name="visitor-company" id="visitor-company" placeholder="Your's Company" >
+            </div>
+            <div class="question">
+                <label for="visit-purpose">Purpose of Visiting</label>
+                <input required type="text" name="visit-purpose" id="visit-purpose" placeholder="Your's purpose" >
+            </div>
             <label for="date">Date</label>
             <input required type="date" name="date" id="date"  placeholder="DD/MM/YYYY">
             <label for="q1">During the last 24 hours, have you suffered from diarrhea, vomitting, stomach disorder or typhoid fever/ paratyphoid fever ?</label>
