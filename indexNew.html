@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Test sample</title>
+        <link href="icon/ofi - primary logo RGB.png">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $("#button").click(function(){
+                    var formData={name:$("#name").val(),visitor_company:$("#visitor-company").val(),visitor_purpose:$("#visit-purpose").val(),date:$("#date").val(),q1:$("#q1").val(),q2:$("#q2").val()}
+                    $.ajax({
+                        contentType:"application/json",
+                        type:"POST",
+                            url:"https://prod-121.westeurope.logic.azure.com:443/workflows/ec68ccb45a0241e38ca063cef0751376/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=svq57-2nINHcpGcWJURvtXkVQp1R98NUTvjJ3eQxk0U",
+                            data:JSON.stringify(formData),
+                        success: function(){
+                            alert("Submitted");
+                        },
+                        error:function(){
+                            alert("Error!!!");
+                        }
+                    })
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+        <label for="visitor-company">Visitor</label>
+        <input type="text" name="visitor-company" id="visitor-company" required>
+        <label for="visit-purpose">Purpose of Visiting</label>
+        <input type="text" name="visit-purpose" id="visit-purpose" required>
+        <label for="date">Date</label>
+        <input type="text" name="date" id="date" required placeholder="DD/MM/YYYY">
+        <label for="q1">During the last 24 hours, have you suffered from diarrhea, vomitting, stomach disorder or typhoid fever/ paratyphoid fever ?</label>
+        <input type="radio" name="q1" id="q1" value="Yes">
+        <label for="q1">Yes</label>
+        <input type="radio" name="q1" id="q1" value="No">
+        <label for="q1">No</label>
+        <label for="q2">Are you suffering from any infectious condition of the following: Skin, nose, throat, eyes, ears ?</label>
+        <input type="radio" name="q2" id="q2" value="Yes">
+        <label for="q2">Yes</label>
+        <input type="radio" name="q2" id="q2" value="No">
+        <label for="q2">No</label>  
+        <button id="button">Submit</button>
+        
+    </body>
+</html>
