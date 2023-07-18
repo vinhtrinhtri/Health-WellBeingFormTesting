@@ -20,7 +20,7 @@
                 url:"https://prod-130.westeurope.logic.azure.com:443/workflows/1f0abb2c0bbc494daa75cdb17bfd2113/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=VrJC6VNPisuQGrJhZQN-36QvXVpviLTZCm0luXU_4cQ",
                 data:JSON.stringify(formData),
                 success: function(){
-                    $("#postResult").val("Successfully Submit");
+                    alert("");
                 },
                 error:function(){
                      $("#postResult").val("Failed");
@@ -156,7 +156,6 @@
 </div>
 </div>
 <button id=button class="btn btn-success" style=background-color:#f78c2a;border-color:#f78c2a;margin-bottom:20px>Submit</button>
-<input type=text id=postResult value=Empty>
 </form>
 </body>
 </html>
