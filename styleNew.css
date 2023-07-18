@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: "Century Gothic", Arial, sans-serif;
 }
-form{
+.form{
     border: 1px solid black;
     width:90%;
     max-width: 1200px;

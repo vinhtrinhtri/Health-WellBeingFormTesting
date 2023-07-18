@@ -13,11 +13,11 @@
 <script>
     $(function(){
         $("#button").click(function(){
-            var formData ={Date:$("#date").val(),name:$("#name").val(),visitor:$("#visitor").val(),purpose:$("#purpose"),q1:$("#q1").val(),q2:$("#q2").val(),q3:$("#q3").val(),q4:$("#q4").val(),q5:$("#q5").val(),q6:$("#q6").val(),q7:$("#q7").val()}
+            var formData ={date:$("#date").val(),name:$("#name").val(),visitor:$("#visitor").val(),purpose:$("#purpose").val(),q1:$("#q1:checked").val(),q2:$("#q2:checked").val(),q3:$("#q3:checked").val(),q4:$("#q4:checked").val(),q5:$("#q5:checked").val(),q6:$("#q6:checked").val(),q7:$("#q7:checked").val()}
             $.ajax({
                 contentType:"application/json",
                 type: "POST",
-                url:"https://prod-118.westeurope.logic.azure.com:443/workflows/0f368662a9d04c07a1164d31844f4c12/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=zvfQfo9cTvveL8lwApVn5myc4VGB1GZPyQXfptam1FA",
+                url:"https://prod-130.westeurope.logic.azure.com:443/workflows/1f0abb2c0bbc494daa75cdb17bfd2113/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=VrJC6VNPisuQGrJhZQN-36QvXVpviLTZCm0luXU_4cQ",
                 data:JSON.stringify(formData),
                 success: function(){
                     $("#postResult").val("Success");
@@ -47,10 +47,10 @@
 <p>Page: 1/1</p>
 </div>
 </section>
-<form method=post id=form>
+<section class=form>
 <div class=form-section>
 <label for=date>Date</label>
-<input required type="text " id=date name=date placeholder="Date">
+<input required type="date " id=date name=date placeholder="Date">
 </div>
 <div class=form-section>
 <label for=name>Name of the visitor/ contractor</label>
@@ -157,6 +157,6 @@
 </div>
 <button id=button class="btn btn-success" style=background-color:#f78c2a;border-color:#f78c2a;margin-bottom:20px>Submit</button>
 <input type=text id=postResult value=Empty>
-</form>
+</section>
 </body>
 </html>
