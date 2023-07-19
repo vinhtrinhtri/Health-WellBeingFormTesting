@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width initial-scale=1.0">
+<meta http-equiv=X-UA-Compatible content="ie=edge">
+<title>Health & Well Being Declaration</title>
+<link rel=icon href="../icon/ofi - primary logo RGB.png">
+<link rel=stylesheet href=style.css>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css integrity=sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm crossorigin=anonymous>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js integrity=sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl crossorigin=anonymous></script>
+<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+<script>
+	function SubForm (){
+		$.ajax({
+			url:"https://www.apispreadsheets.com/table/SHNEjSC1M7Nav9Jn/",
+			type:"post",
+			data:$("#myForm").serializeArray(),
+			success: function(){
+				alert("Form Data Submitted :)")
+			},
+			error: function(){
+				alert("There was an error :(")
+			}
+		});
+	}
+</script>
+
+</head>
+<body>
+<div class=title>
+<div class="title-section logo">
+<img src="../icon/ofi - primary logo RGB.png" alt id=logo>
+<p>Cafe Outspan Vietnam Ltd</p>
+</div>
+<div class="title-section name">
+<p>HEALTH & WELLBEING OF VISITOR AND CONTRACTOR</p>
+</div>
+<div class="title-section haccp">
+<p>No: COV/SSOP-07-HR/FM0</p>
+<p>Issue date: 02-May-22</p>
+<p>Revision: 6</p>
+<p>Page: 1/1</p>
+</div>
+</div>
+<form id="myForm">
+<div class=form-section>
+<label for=date>Date</label>
+<input required type="datetime-local" id=date name=Date placeholder="Date">
+</div>
+<div class=form-section>
+<label for=name>Name of the visitor/ contractor</label>
+<input required type=text id=name name=name placeholder="Enter Your's Name">
+</div>
+<div class=form-section>
+<label for=visitor>Visitor/ contractor company</label>
+<input required type=text id=visitor name=Visitor_Company placeholder="Enter Your's Company">
+</div>
+<div class=form-section>
+<label for=purpose>Purpose of the visit</label>
+<input required type=text id=purpose name=Visitor_Purpose placeholder="Your's Purpose">
+</div>
+<div class=form-section>
+<label for=q1>During the last 24 hours, have you suffered from diarrhea, vomitting, stomach disorder or typhoid fever/ paratyphoid fever ?</label>
+</div>
+<div class=form-input>
+<div class="form-check form-check-inline">
+<input class=form-check-input type=radio id=q1 value=Yes name="During the last 24 hours, have you suffered from diarrhea, vomitting, stomach disorder or typhoid fever/ paratyphoid fever ?" required>
+<label class=form-check-label for=q1>Yes</label>
+</div>
+<div class="form-check form-check-inline">
+<input class=form-check-input type=radio id=q1 value=No name="During the last 24 hours, have you suffered from diarrhea, vomitting, stomach disorder or typhoid fever/ paratyphoid fever ?" required>
+<label class=form-check-label for=q1>No</label>
+</div>
+</div>
+<div class=form-section>
+<label for=q2>Are you suffering from any infectious condition of the following: Skin, nose, throat, eyes, ears ?</label>
+</div>
+<div class=form-input>
+<div class="form-check form-check-inline">
+<input class=form-check-input type=radio id=q2 value=Yes name="Are you suffering from any infectious condition of the following: Skin, nose, throat, eyes, ears ?" required>
+<label class=form-check-label for=q2>Yes</label>
+</div>
+<div class="form-check form-check-inline">
+<input class=form-check-input type=radio id=q2 value=No name="Are you suffering from any infectious condition of the following: Skin, nose, throat, eyes, ears ?" required>
+<label class=form-check-label for=q2>No</label>
+</div>
+</div>
+<div class=form-section>
+<label for=q3>Are you carrying any medication or other than for Asthma and Heart problem ?</label>
+</div>
+<div class=form-input>
+<div class="form-check form-check-inline">
+<input class=form-check-input type=radio id=q3 value=Yes name="Are you carrying any medication or other than for Asthma and Heart problem ?" required>
+<label class=form-check-label for=q3>Yes</label>
+</div>
+<div class="form-check form-check-inline">
+<input class=form-check-input type=radio id=q3 value=No name="Are you carrying any medication or other than for Asthma and Heart problem ?" required>
+<label class=form-check-label for=q3>No</label>
+</div>
+</div>
+<div class=form-section>
+<label for=q4>Do you suffer from Hepatitis A or Hepatitis E ?</label>
+</div>
+<div class=form-input>
+<div class="form-check form-check-inline">
+<input class=form-check-input type=radio id=q4 value=Yes name="Do you suffer from Hepatitis A or Hepatitis E ?" required>
+<label class=form-check-label for=q4>Yes</label>
+</div>
+<div class="form-check form-check-inline">
+<input class=form-check-input type=radio id=q4 value=No name="Do you suffer from Hepatitis A or Hepatitis E ?" required>
+<label class=form-check-label for=q4>No</label>
+</div>
+</div>
+<div class=form-section>
+<label for=q5>Do you suffer from food related allergies or chemical compounds typically associated with the cleaning and sanutation of plant and equipment ?</label>
+</div>
+<div class=form-input>
+<div class="form-check form-check-inline">
+<input class=form-check-input type=radio id=q5 value=Yes name="Do you suffer from food related allergies or chemical compounds typically associated with the cleaning and sanutation of plant and equipment ?" required>
+<label class=form-check-label for=q5>Yes</label>
+</div>
+<div class="form-check form-check-inline">
+<input class=form-check-input type=radio id=q5 value=No name="Do you suffer from food related allergies or chemical compounds typically associated with the cleaning and sanutation of plant and equipment ?" required>
+<label class=form-check-label for=q5>No</label>
+</div>
+</div>
+<div class=form-section>
+<label for=q6>Are you suffering from a severe cough or serious cough or serious cold or influenza ?</label>
+</div>
+<div class=form-input>
+<div class="form-check form-check-inline">
+<input class=form-check-input type=radio id=q6 value=Yes name="Are you suffering from a severe cough or serious cough or serious cold or influenza ?" required>
+<label class=form-check-label for=q6>Yes</label>
+</div>
+<div class="form-check form-check-inline">
+<input class=form-check-input type=radio id=q6 value=No name="Are you suffering from a severe cough or serious cough or serious cold or influenza ?" required>
+<label class=form-check-label for=q6>No</label>
+</div>
+</div>
+<div class=form-section>
+<label for=q7>Do you have ANY unsafe syndrome that may be pertinent to your safety in our premises ?</label>
+</div>
+<div class=form-input>
+<div class="form-check form-check-inline">
+<input class=form-check-input type=radio id=q7 value=Yes name="Do you have ANY unsafe syndrome that may be pertinent to your safety in our premises ?" required>
+<label class=form-check-label for=q7>Yes</label>
+</div>
+<div class="form-check form-check-inline">
+<input class=form-check-input type=radio id=q7 value=No name="Do you have ANY unsafe syndrome that may be pertinent to your safety in our premises ?" required>
+<label class=form-check-label for=q7>No</label>
+</div>
+</div>
+</form>
+<button onclick="SubForm()" class="btn btn-success" style=background-color:#f78c2a;border-color:#f78c2a;margin-bottom:20px>Submit</button>
+</body>
+</html>
