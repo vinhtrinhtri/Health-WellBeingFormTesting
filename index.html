@@ -21,6 +21,7 @@
                 data:JSON.stringify(formData),
                 success: function(){
                     alert("Successful Submitted");
+                    $("#button").attr("disabled",true);
                 },
                 error:function(){
                     alert("Failed");
