@@ -7,6 +7,9 @@
 <title>Health & Well Being Declaration</title>
 <link rel=icon href="icon/ofi - primary logo RGB.png">
 <link rel=stylesheet href=style.css>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
 <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css integrity=sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm crossorigin=anonymous>
 <script src=https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js integrity=sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl crossorigin=anonymous></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -14,13 +17,20 @@
     $(function(){
         $("#button").click(function(){
             var formData ={date:$("#date").val(),name:$("#name").val(),visitor:$("#visitor").val(),purpose:$("#purpose").val(),q1:$("#q1:checked").val(),q2:$("#q2:checked").val(),q3:$("#q3:checked").val(),q4:$("#q4:checked").val(),q5:$("#q5:checked").val(),q6:$("#q6:checked").val(),q7:$("#q7:checked").val()}
+            var formDataValue = Object.values(formData);
+            for (let i = 0; i < formDataValue.length ; i++){
+            if (formDataValue[i] == ""){
+                alert("All field must be filled (* ￣︿￣)");
+                return false;
+                }
+            }
             $.ajax({
                 contentType:"application/json",
                 type: "POST",
                 url:"https://prod-130.westeurope.logic.azure.com:443/workflows/1f0abb2c0bbc494daa75cdb17bfd2113/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=VrJC6VNPisuQGrJhZQN-36QvXVpviLTZCm0luXU_4cQ",
                 data:JSON.stringify(formData),
                 success: function(){
-                    alert("Successful Submitted");
+                    alert("❤ Thank you. Your Data has been submitted ❤");
                     $("#button").attr("disabled",true);
                 },
                 error:function(){
@@ -158,7 +168,6 @@
         </div>
         <button id=button class="btn btn-success" style=background-color:#f78c2a;border-color:#f78c2a;margin-bottom:20px>Submit</button>
     </div>
-
-
+<p id="thank" hidden>Thank you. Your data has been submiited</p>
 </body>
 </html>
