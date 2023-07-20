@@ -97,9 +97,9 @@ button {
         font-size: xx-small;
         width:15%;
     }
-    /*.title-section{
-        height: 140px;
-    }*/
+    .title-section{
+        height: 170px;
+    }
     #logo{
         height: 50%;
         width: 50%;
