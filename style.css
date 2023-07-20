@@ -91,14 +91,14 @@ button {
 
 @media only screen and (max-width: 827px) and (orientation: portrait) {
     p,label{
-        font-size: small;
+        font-size: xx-small;
     }
     #button{
         font-size: xx-small;
         width:15%;
     }
     .title-section{
-        height: 140px;
+        height: 100px;
     }
     #logo{
         height: 50%;
