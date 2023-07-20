@@ -15,11 +15,22 @@
         $("#button").click(function(){
             var formData ={date:$("#date").val(),name:$("#name").val(),visitor:$("#visitor").val(),purpose:$("#purpose").val(),q1:$("#q1:checked").val(),q2:$("#q2:checked").val(),q3:$("#q3:checked").val(),q4:$("#q4:checked").val(),q5:$("#q5:checked").val(),q6:$("#q6:checked").val(),q7:$("#q7:checked").val()}
             var formDataValue = Object.values(formData);
+            var radio = document.querySelectorAll('input[type="radio"]')
+            var a = 0;
             for (let i = 0; i < formDataValue.length ; i++){
             if (formDataValue[i] == ""){
                 alert("All field must be filled (* ￣︿￣)");
                 return false;
                 }
+            }
+            for (let j = 0 ; j<radio.length;j++){
+                if(radio[j].checked){
+                    a += 1;
+                }
+            }
+            if (a < 7){
+                alert("All field must be filled (* ￣︿￣)");
+                return false;
             }
             $.ajax({
                 contentType:"application/json",
