@@ -107,4 +107,7 @@ button {
     .haccp{
         padding: 0px 0px;
     }
+    #title-name{
+        font-size: 1.5rem;
+    }
 }
