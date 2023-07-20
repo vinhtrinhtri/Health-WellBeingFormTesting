@@ -91,17 +91,20 @@ button {
 
 @media only screen and (max-width: 800px) and (orientation: portrait) {
     p,label{
-        font-size: x-small;
+        font-size: small;
     }
     #button{
         font-size: xx-small;
         width:15%;
     }
     .title-section{
-        height: 180px;
+        height: 140px;
     }
     #logo{
         height: 50%;
         width: 50%;
+    }
+    .haccp{
+        padding: 0px 0px;
     }
 }
